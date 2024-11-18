@@ -1,25 +1,17 @@
 import dask.dataframe as dd
 import pandas as pd
+import requests
 
 def main():
     # Read data from the server container
-    ddf = dd.read_csv("http://obspy-dask-container:80/processed_data.csv")
+    server_url = "http://your-server-public-ip:80/processed_data.csv"
+    response = requests.get(server_url)
     
-    # Perform any necessary data processing
-    # For example:
-    # ddf = ddf.dropna()
-    # ddf = ddf.rename(columns={'old_name': 'new_name'})
+    # Save the CSV content to a file
+    with open("/notebooks/processed_data.csv", "wb") as f:
+        f.write(response.content)
     
-    # Convert to pandas DataFrame for further analysis
-    df = ddf.compute()
-    
-    # Perform your analysis here
-    # For example:
-    # result = df.describe()
-    # print(result)
-    
-    # Optionally, save the processed data
-    df.to_csv("/notebooks/processed_data.csv", index=False)
+    print(f"Data saved to /notebooks/processed_data.csv")
 
 if __name__ == "__main__":
     main()

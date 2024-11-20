@@ -3,7 +3,6 @@ version: "3"
 services:
   jupyter:
     container_name: client-jupyter
-    image: client-jupyter
     build:
       context: .
       dockerfile: Dockerfile

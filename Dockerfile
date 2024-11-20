@@ -4,7 +4,7 @@ FROM python:3.12-slim
 ENV DEBIAN_FRONTEND=noninteractive
 
 # Set the working directory
-WORKDIR /notebooks
+WORKDIR /
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
@@ -26,9 +26,9 @@ RUN apt-get update && apt-get install -y \
 
 # Upgrade pip and install wheel
 RUN python -m pip install --upgrade pip wheel setuptools
-
+    
 # Install additional packages
-RUN pip install --no-cache-dir textblob nltk ipykernel numpy pandas matplotlib seaborn scikit-learn scipy plotly requests beautifulsoup4 pillow sqlalchemy google-cloud-bigquery google-auth-oauthlib google-auth-httplib2 google-api-python-client tensorflow keras torch torchvision torchaudio opencv-python ffmpeg-python librosa pydub youtube-dl tqdm ipywidgets widgetsnbextension ipympl xgboost JupyterLab jupyterlab-git dask
+RUN pip install --no-cache-dir textblob nltk ipykernel numpy pandas matplotlib seaborn scikit-learn scipy plotly requests beautifulsoup4 pillow sqlalchemy google-cloud-bigquery google-auth-oauthlib google-auth-httplib2 google-api-python-client tensorflow keras torch torchvision torchaudio opencv-python ffmpeg-python librosa pydub youtube-dl tqdm ipywidgets widgetsnbextension ipympl xgboost JupyterLab jupyterlab-git dask pyarrow obspy
 
 # Update TextBlob and install NLTK
 RUN pip install --no-cache-dir --upgrade textblob nltk ipykernel numpy pandas matplotlib seaborn scikit-learn scipy plotly requests beautifulsoup4 pillow sqlalchemy google-cloud-bigquery google-auth-oauthlib google-auth-httplib2 google-api-python-client tensorflow keras torch torchvision torchaudio opencv-python ffmpeg-python librosa pydub youtube-dl tqdm ipywidgets widgetsnbextension ipympl xgboost JupyterLab jupyterlab-git

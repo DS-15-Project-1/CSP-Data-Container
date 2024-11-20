@@ -9,10 +9,7 @@ services:
     ports:
       - "8888:8888"
     volumes:
-      - ./notebooks:/notebooks
+      - .:/notebooks
     environment:
       - GRANT_SUDO=yes
     user: root
-
-volumes:
-  notebooks:

@@ -1,4 +1,5 @@
-FROM python:3.12-slim
+# Start with the base image
+FROM bitnami/jupyter-base-notebook:latest
 
 # Set environment variables
 ENV DEBIAN_FRONTEND=noninteractive
@@ -24,11 +25,13 @@ RUN apt-get update && apt-get install -y \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
-# Upgrade pip and install wheel
-RUN python -m pip install --upgrade pip wheel setuptools
-    
-# Install additional packages
-RUN pip install --no-cache-dir textblob nltk ipykernel numpy pandas matplotlib seaborn scikit-learn scipy plotly requests beautifulsoup4 pillow sqlalchemy==1.4.46 google-cloud-bigquery google-auth-oauthlib google-auth-httplib2 google-api-python-client tensorflow keras torch torchvision torchaudio opencv-python ffmpeg-python librosa pydub youtube-dl tqdm ipywidgets widgetsnbextension ipympl xgboost JupyterLab jupyterlab-git dask pyarrow obspy
+# Install additional packages using conda
+RUN conda install --quiet --yes \
+    'matplotlib-base' \
+    'scipy' \
+    'textblob' \
+    nltk ipykernel numpy pandas matplotlib seaborn scikit-learn scipy plotly requests beautifulsoup4 pillow sqlalchemy==1.4.46 google-cloud-bigquery google-auth-oauthlib google-auth-httplib2 google-api-python-client tensorflow keras torch torchvision torchaudio opencv-python ffmpeg-python librosa pydub youtube-dl tqdm ipywidgets widgetsnbextension ipympl xgboost JupyterLab jupyterlab-git dask pyarrow obspy && \
+    conda clean --all -f -y
 
 # Download NLTK data and TextBlob corpora
 RUN python -c "import nltk; nltk.download('wordnet'); nltk.download('averaged_perceptron_tagger'); nltk.download('punkt'); nltk.download('stopwords'); nltk.download('omw-1.4')"

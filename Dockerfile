@@ -27,10 +27,10 @@ RUN apt-get update && apt-get install -y \
 
 # Install additional packages using conda
 RUN conda install --quiet --yes \
-    'matplotlib-base' \
+    'matplotlib-base' \ 
     'scipy' \
     'textblob' \
-    nltk ipykernel numpy pandas matplotlib seaborn scikit-learn scipy plotly requests beautifulsoup4 pillow sqlalchemy==1.4.46 google-cloud-bigquery google-auth-oauthlib google-auth-httplib2 google-api-python-client tensorflow keras torch torchvision torchaudio opencv-python ffmpeg-python librosa pydub youtube-dl tqdm ipywidgets widgetsnbextension ipympl xgboost JupyterLab jupyterlab-git dask pyarrow obspy && \
+    nltk ipykernel numpy pandas matplotlib seaborn scikit-learn scipy plotly requests beautifulsoup4 pillow sqlalchemy==1.4.46 google-cloud-bigquery google-auth-oauthlib google-auth-httplib2 google-api-python-client tensorflow keras torch torchvision torchaudio opencv-python ffmpeg-python librosa pydub youtube-dl tqdm ipywidgets widgetsnbextension ipympl xgboost JupyterLab jupyterlab-git dask pyarrow==15.0.0  obspy && \
     conda clean --all -f -y
 
 # Download NLTK data and TextBlob corpora

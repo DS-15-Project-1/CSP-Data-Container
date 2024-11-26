@@ -1,5 +1,5 @@
 # Start with the base image
-FROM bitnami/jupyter-base-notebook:latest
+FROM ubuntu:24.04
 
 # Set environment variables
 ENV DEBIAN_FRONTEND=noninteractive

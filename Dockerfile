@@ -5,7 +5,7 @@ FROM python:3.12-slim
 ENV DEBIAN_FRONTEND=noninteractive
 
 # Set the working directory
-WORKDIR /
+WORKDIR /notebooks
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \

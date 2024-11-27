@@ -19,7 +19,7 @@ When you run this container using docker-compose up, it will:
 - Run docker-compose up in the directory containing your docker-compose.yml file.
 - go to the terminal inside of your container with docker exec -it client-jupyter /bin/bash and type "jupyter server list"
 - Open a web browser and go to http://localhost:8888/?token=your_token_here (replace wit token= from the output of your "jupyter server list" command)
-- You should see the Jupyter Lab interface where you can access the seismic data fromt the "notebooks" directory
+- You should see the Jupyter Lab interface where you can access the seismic data fromt the "notebooks" directory.
 
 ## Project Structure
 

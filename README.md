@@ -25,4 +25,5 @@ When you run this container using docker-compose up, it will:
 
 - Dockerfile: Contains the instructions for building the Docker image.
 - docker-compose.yml: Defines the services and configuration for running the container.
+
 - df_access.py allows your to read the data from parquet files

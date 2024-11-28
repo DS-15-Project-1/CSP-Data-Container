@@ -4,7 +4,7 @@ FROM python:3.12-slim
 # Set environment variables
 ENV DEBIAN_FRONTEND=noninteractive
 
-# Set the working directory
+# Set the working directorys
 WORKDIR /notebooks
 
 # Install system dependencies
@@ -27,7 +27,7 @@ RUN pip install \
     numpy \
     matplotlib \
     scipy \
-    nltk 
+    nltk
 
 # Download NLTK data
 RUN python -c "import nltk; nltk.download('wordnet'); nltk.download('punkt'); nltk.download('stopwords')"

@@ -27,7 +27,7 @@ RUN pip install \
     numpy \
     matplotlib \
     scipy \
-    nltk
+    nltk 
 
 # Download NLTK data
 RUN python -c "import nltk; nltk.download('wordnet'); nltk.download('punkt'); nltk.download('stopwords')"

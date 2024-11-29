@@ -1,5 +1,3 @@
-version: "3"
-
 services:
   jupyter:
     container_name: client-jupyter
@@ -13,3 +11,4 @@ services:
     environment:
       - GRANT_SUDO=yes
     user: root
+    command: bash -c "echo 'Starting Jupyter Lab...' && conda run -n myenv jupyter lab --ip=0.0.0.0 --allow-root"

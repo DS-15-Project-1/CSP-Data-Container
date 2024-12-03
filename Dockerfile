@@ -1,5 +1,5 @@
-# Start with the base image
-FROM continuumio/miniconda3
+# Use Python 3.12 as the base image
+FROM python:3.12-bullseye
 
 # Set environment variables
 ENV DEBIAN_FRONTEND=noninteractive
@@ -7,20 +7,30 @@ ENV DEBIAN_FRONTEND=noninteractive
 # Set the working directory
 WORKDIR /notebooks
 
-# Update conda and install necessary packages
-RUN conda update -n base -c defaults conda && \
-    conda install -c conda-forge obspy jupyterlab pandas pyarrow numpy matplotlib scipy nltk -y && \
-    conda clean --all -y
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    libssl-dev \
+    zlib1g-dev \
+    libbz2-dev \
+    libarchive13 \
+    && rm -rf /var/lib/apt/lists/*
 
-# Install additional packages via pip
-RUN pip install --no-binary=:all: wheel setuptools
+# Upgrade pip and install wheel
+RUN python -m pip install --upgrade pip && \
+    python -m pip install wheel
 
-# Download NLTK data
-RUN python -c "import nltk; nltk.download('wordnet'); nltk.download('punkt'); nltk.download('stopwords')"
-
-# Install gcc and other build dependencies
-RUN apt-get update && apt-get install -y gcc g++ && \
-    apt-get clean && rm -rf /var/lib/apt/lists/*
+# Install required packages
+RUN python -m pip install \
+    obspy \
+    jupyterlab \
+    pandas \
+    pyarrow \
+    numpy \
+    matplotlib \
+    scipy \
+    nltk \
+    ipython \
+    && python -m nltk.downloader wordnet punkt stopwords
 
 # Set the default command to run when starting the container
 CMD ["jupyter", "lab", "--ip=0.0.0.0", "--allow-root"]

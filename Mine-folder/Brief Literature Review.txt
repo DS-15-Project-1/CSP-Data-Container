@@ -1,0 +1,22 @@
+Brief Literature Review 
+
+https://erlweb.mit.edu/announcements/geomechanical-modeling-co2-sequestration-review-focused-co2-injection-and-monitoring
+
+https://www.cambridge.org/core/books/abs/geophysics-and-geosequestration/microseismic-imaging-of-co2-injection/2475105F0485DFD8158D449E90A34F66
+
+
+The connection between CO2 sequestration, injection, and seismic activity has been a focus of extensive research, particularly as carbon capture and storage (CCS) strategies gain prominence in combating climate change. Here's a summary of findings from recent literature:
+
+1. **Mechanisms of Seismic Activity**: The injection of CO2 into subsurface reservoirs increases pore pressure and reduces effective stress within the geological formation. This can potentially lead to fault reactivation and induced seismicity, depending on the site-specific geomechanical conditions and pre-existing faults. Monitoring these processes is critical to mitigate risks and optimize storage integrity.
+
+2. **Field Studies**:
+   - **In Salah, Algeria**: At the In Salah CCS site, microseismic monitoring detected seismic events correlated with CO2 injection. The research highlighted the importance of assessing pressure propagation and caprock integrity to prevent significant seismic risks【7】.
+   - **Decatur, Illinois**: Microseismic events at the Illinois Basin–Decatur Project were linked to CO2 injection, providing insights into how monitoring techniques like seismic imaging and modeling can inform safety measures.
+
+3. **Geomechanical Modeling**: Advanced simulations have been used to predict ground uplift, pore pressure distribution, and fault behavior due to CO2 injection. These models help in understanding the complex interactions between fluid flow and rock mechanics, which is vital for site selection and management.
+
+4. **Monitoring and Mitigation**:
+   - The use of real-time microseismic monitoring, InSAR imaging, and other geophysical techniques has proven effective in detecting and analyzing injection-induced seismicity.
+   - Adaptive management strategies, including modifying injection rates or redistributing wells, have been proposed to minimize seismic risks.
+
+This research underscores the importance of integrating geomechanical models and robust monitoring systems into CCS projects to ensure safe and sustainable CO2 storage while addressing the potential for induced seismic activity. For more detailed studies, you can explore publications such as those from MIT's Earth Resources Laboratory or field-specific journals on geosequestration.

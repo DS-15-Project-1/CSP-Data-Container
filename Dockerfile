@@ -29,8 +29,10 @@ RUN python -m pip install \
     matplotlib \
     scipy \
     nltk \
-    ipython \
-    && python -m nltk.downloader wordnet punkt stopwords
+    ipython 
+
+# Create a symbolic link to the mounted data directory
+RUN ln -s /data /mnt/f
 
 # Set the default command to run when starting the container
 CMD ["jupyter", "lab", "--ip=0.0.0.0", "--allow-root"]

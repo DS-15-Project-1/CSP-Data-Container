@@ -1,3 +1,5 @@
+version: '3'
+
 services:
   jupyter:
     container_name: client-jupyter
@@ -7,7 +9,8 @@ services:
     ports:
       - "8888:8888"
     volumes:
-      - .:/notebooks
+      - ./notebooks:/notebooks
+      - /mnt/:/mnt/
     environment:
       - GRANT_SUDO=yes
     user: root

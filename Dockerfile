@@ -21,15 +21,17 @@ RUN python -m pip install --upgrade pip && \
 
 # Install required packages
 RUN python -m pip install \
-    obspy \
-    jupyterlab \
-    pandas \
+    dask[delayed] \
+    dask[dataframe] \
+    distributed \
+    psutil \
     pyarrow \
-    numpy \
+    pandas \
+    jupyterlab \
     matplotlib \
     scipy \
     nltk \
-    ipython 
+    ipython
 
 # Create a symbolic link to the mounted data directory
 RUN ln -s /data /mnt/f

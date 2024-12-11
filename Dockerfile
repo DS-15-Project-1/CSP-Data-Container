@@ -19,17 +19,14 @@ RUN apt-get update && apt-get install -y \
 RUN python -m pip install --upgrade pip && \
     python -m pip install wheel
 
-# Install required packages
 RUN python -m pip install \
     obspy \
     dask \
+    dask[dataframe] \
     pandas \
+    plotly \
+    jupyter \
     jupyterlab \
-    matplotlib \
-    scipy \
-    nltk \
-    ipython \
-    psutil \
     && rm -rf /usr/share/dict
 
 # Set the default command to run when starting the container

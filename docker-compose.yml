@@ -9,9 +9,14 @@ services:
     ports:
       - "8888:8888"
     volumes:
-      - ./notebooks:/notebooks
-      - /media/rsbiim/Extreme Pro:/media/rsbiim/Extreme Pro
+      - .:/notebooks
+      - /media/rsbiim/Extreme Pro/:/media/rsbiim/Extreme Pro/
     environment:
       - GRANT_SUDO=yes
     user: root
     command: bash -c "echo 'Starting Jupyter Lab...' && jupyter lab --ip=0.0.0.0 --allow-root"
+    deploy:
+      resources:
+        limits:
+          memory: 16G
+          cpus: "12"

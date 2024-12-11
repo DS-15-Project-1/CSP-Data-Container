@@ -21,20 +21,16 @@ RUN python -m pip install --upgrade pip && \
 
 # Install required packages
 RUN python -m pip install \
-    dask[delayed] \
-    dask[dataframe] \
-    distributed \
-    psutil \
-    pyarrow \
+    obspy \
+    dask \
     pandas \
     jupyterlab \
     matplotlib \
     scipy \
     nltk \
-    ipython
-
-# Create a symbolic link to the mounted data directory
-RUN ln -s /data /mnt/f
+    ipython \
+    psutil \
+    && rm -rf /usr/share/dict
 
 # Set the default command to run when starting the container
 CMD ["jupyter", "lab", "--ip=0.0.0.0", "--allow-root"]

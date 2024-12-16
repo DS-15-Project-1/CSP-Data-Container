@@ -13,17 +13,13 @@ This project provides a client-side environment for analyzing CO2 sequestration 
 
 ## Usage
 
-When you run this container using docker-compose up, it will:
-
 - To access the Jupyter notebook:
 - Run docker-compose up in the directory containing your docker-compose.yml file.
 - go to the terminal inside of your container with docker exec -it client-jupyter /bin/bash and type "jupyter server list"
-- Open a web browser and go to http://localhost:8888/?token=your_token_here (replace wit token= from the output of your "jupyter server list" command)
-- You should see the Jupyter Lab interface where you can access the seismic data fromt the "notebooks" directory.
+- Open a web browser and go to http://localhost:8888/?token=your_token_here (replace with token= from the output of your "jupyter server list" command)
+- You should see the Jupyter Lab interface where you can access the seismic data from the "notebooks" directory.
 
 ## Project Structure
 
 - Dockerfile: Contains the instructions for building the Docker image.
 - docker-compose.yml: Defines the services and configuration for running the container.
-
-- df_access.py allows your to read the data from parquet files
